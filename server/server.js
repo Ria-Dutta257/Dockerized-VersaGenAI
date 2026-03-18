@@ -6,7 +6,7 @@ import aiRouter from './routes/aiRoutes.js';
 import connectCloudinary from './configs/cloudinary.js';
 import userRouter from './routes/userRoutes.js';
 
-console.log("API KEY:", process.env.GEMINI_API_KEY);
+
 
 const app = express()
 
@@ -23,7 +23,7 @@ app.use(requireAuth())
 app.use('/api/ai',aiRouter)
 app.use('/api/user',userRouter)
 
-console.log("ENV TEST:", process.env.GEMINI_API_KEY);
+
 const PORT =process.env.PORT || 3000;
 
 app.listen(PORT, ()=>{

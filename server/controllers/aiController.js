@@ -26,8 +26,7 @@ export const generateArticle = async (req, res) => {
       });
     }
 
-    console.log("Prompt received:", prompt);
-    console.log(req.body);
+
 
 
 
@@ -39,7 +38,7 @@ const response = await result.response;
 
 const content = response.text();
 
-console.log("AI Response:", response);
+
 
     await sql` INSERT INTO creations (user_id, prompt, content, type)
     VALUES (${userId}, ${prompt}, ${content}, 'article')`;
@@ -83,8 +82,6 @@ const result = await model.generateContent(prompt);
 const response = await result.response;
 
 const content = response.text();
-
-console.log("AI Response:", response);
 
 
     // const response = await AI.chat.completions.create({
